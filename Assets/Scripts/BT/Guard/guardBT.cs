@@ -7,7 +7,7 @@ namespace BehaviorTree
     public class guardBT : Tree
     {
         public UnityEngine.Transform[] waypoints_;
-        [SerializeField] 
+        [SerializeField]
         public Enemy_AI_vars Enemy;
 
 
@@ -16,16 +16,18 @@ namespace BehaviorTree
         public static float attackRange_;
         public static float attackinterval_;
         public static float rotationSpeed_;
+        public static Camera cam;
 
         private void init()
         {
-        speed_ = Enemy.speed;
-        fovRange_ = Enemy.fovRange;
-        attackRange_ = Enemy.attackRange;
-        attackinterval_ = Enemy.attackinterval;
-        rotationSpeed_ = Enemy.rotationSpeed;
-
+            speed_ = Enemy.speed;
+            fovRange_ = Enemy.fovRange;
+            attackRange_ = Enemy.attackRange;
+            attackinterval_ = Enemy.attackinterval;
+            rotationSpeed_ = Enemy.rotationSpeed;
+            cam = Camera.main;
         }
+
         protected override Node SetupTree()
         {
             init();
