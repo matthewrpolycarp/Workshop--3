@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         _input = context.ReadValue<Vector2>();
-        _direction = new Vector3(_input.x, 0.0f, _input.y);
+        _direction = (transform.forward * _input.y) + transform.right * _input.x;
     }
 
     public void Jump(InputAction.CallbackContext context)
