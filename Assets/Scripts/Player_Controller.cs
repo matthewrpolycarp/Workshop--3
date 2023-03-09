@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    #region Variables: Item
+    private int numberOfPickUps;
+    #endregion
+
     #region Variables: Movement
 
     private Vector2 _input;
@@ -98,6 +102,15 @@ public class PlayerController : MonoBehaviour
         yield return new WaitUntil(IsGrounded);
 
         _numberOfJumps = 0;
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("PickUp"))
+        {
+            collision.gameObject.SetActive(false);
+            numberOfPickUps++;
+        }
     }
 
     private bool IsGrounded() => _characterController.isGrounded;
