@@ -309,6 +309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c2c505fa349ef4796706757438c703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parental: {fileID: 0}
+  telePoint: {x: 114, y: 5, z: 14}
 --- !u!1 &8698532824524800981
 GameObject:
   m_ObjectHideFlags: 0
