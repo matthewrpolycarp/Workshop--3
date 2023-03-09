@@ -39,10 +39,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int maxNumberOfJumps = 2;
 
     #endregion
-    
+
+
+    Transform canvas;
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
+        canvas = FindObjectOfType<Canvas>().transform;
     }
 
     private void Update()
@@ -109,6 +112,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("PickUp"))
         {
             collision.gameObject.SetActive(false);
+            canvas.GetChild(numberOfPickUps).gameObject.SetActive(true);
             numberOfPickUps++;
         }
     }
