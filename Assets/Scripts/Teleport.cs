@@ -10,7 +10,7 @@ public class Teleport : MonoBehaviour
     {
         if (other.gameObject.tag == "Barrier")
         {
-            parental.transform.position = telePoint
+            parental.transform.position = telePoint;
         }
     }
 }
