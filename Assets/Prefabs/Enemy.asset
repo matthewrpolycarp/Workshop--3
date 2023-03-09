@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2876bda1da3f6bb45b86a79b92191ba6, type: 3}
   m_Name: Enemy
   m_EditorClassIdentifier: 
-  speed: 0
-  rotationSpeed: 0
-  fovRange: 0
+  speed: 3
+  rotationSpeed: 1
+  fovRange: 70
   attackRange: 0
   attackinterval: 0
